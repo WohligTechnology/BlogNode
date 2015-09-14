@@ -54,4 +54,10 @@ module.exports = {
             }
         });
     },
+    broadcastposts: function (req, res) {
+        var obj = req.body;
+        //console.log(req.body);
+        console.log(obj);
+        sails.sockets.blast("broadcast",obj);
+    },
 };
